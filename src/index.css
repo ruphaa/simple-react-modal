@@ -1,0 +1,159 @@
+body {
+  margin: 0;
+  font-family: "Concert One", cursive;
+  background: linear-gradient(
+    to right,
+    #e2b8f7,
+    #d4bafa,
+    #c7bcfb,
+    #b9befb,
+    #acbff9
+  );
+}
+
+#modal-root {
+  position: relative;
+  z-index: 999;
+}
+
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.main p {
+  color: #fff;
+  font-size: 60px;
+}
+
+.main button {
+  padding: 20px 30px;
+  width: 200px;
+  outline: none;
+  border-radius: 15px;
+  font-family: "Concert One", cursive;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #c061ef;
+  background: linear-gradient(#08c7fe 0%, #04d7f2 71%, #02ffd0 100%);
+  cursor: pointer;
+}
+
+.modal {
+  height: 100%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    to right,
+    #e2b8f7,
+    #d4bafa,
+    #c7bcfb,
+    #b9befb,
+    #acbff9
+  );
+}
+
+.modal-header {
+  position: relative;
+  width: 100%;
+}
+
+.modal-header h1 {
+  /* font-family: monospace; */
+  font-family: "Pacifico", cursive;
+  font-size: 70px;
+  color: #fff;
+  text-align: center;
+}
+
+.modal-header .close {
+  display: inline-block;
+  position: absolute;
+  top: 20px;
+  left: 100%;
+  cursor: pointer;
+}
+
+.modal-header .close i {
+  font-size: 30px;
+  color: #000;
+}
+
+.modal-body .party {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  position: relative;
+}
+
+.girl svg {
+  height: 300px;
+}
+
+.balloon {
+  position: absolute;
+  top: -0.25rem;
+  width: 72px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: #f76a8c;
+  animation: flyUp 6s linear infinite;
+}
+
+.balloon::after {
+  content: "▲";
+  position: absolute;
+  font-size: 12px;
+  width: 12px;
+  left: 50%;
+  color: inherit;
+  bottom: -10px;
+  transform: translate(-50%, 0);
+  color: #f76a8c;
+}
+
+.b1 {
+  left: 80px;
+}
+
+.b2 {
+  top: 70px;
+  left: 200px;
+}
+
+.b3 {
+  right: 80px;
+}
+
+.b4 {
+  top: 70px;
+  right: 200px;
+}
+
+@keyframes flyUp {
+  0% {
+    transform: translateY(90vh);
+  }
+
+  100% {
+    transform: translateY(-90vh);
+  }
+}
