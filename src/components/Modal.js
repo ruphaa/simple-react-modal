@@ -6,36 +6,40 @@ const Modal = ({
   children,
   visible,
   onCancel,
-  footer,
-  header,
   classes,
-  afterClose,
-  cancelText
+  cancelText,
+  Header: CustomHeader,
+  Footer: CustomFooter
 }) => {
+  const DefaultHeader = () => {
+    return (
+      <React.Fragment>
+        <h1>{contentLabel}</h1>
+        <div className="close" onClick={onCancel}>
+          <i className="fa fa-window-close-o"></i>
+        </div>
+      </React.Fragment>
+    );
+  };
+
+  const DefaultFooter = () => {
+    return <button onClick={onCancel}>{cancelText || "Close"}</button>;
+  };
+
+  const Header = CustomHeader || DefaultHeader;
+  const Footer = CustomFooter || DefaultFooter;
+
   return createPortal(
     <React.Fragment>
       {visible && (
         <div className="modal-overlay">
           <div className={`modal ${classes || ""}`}>
             <div className="modal-header">
-              {header ? (
-                header()
-              ) : (
-                <React.Fragment>
-                  <h1>{contentLabel}</h1>
-                  <div className="close" onClick={onCancel}>
-                    <i className="fa fa-window-close-o"></i>
-                  </div>
-                </React.Fragment>
-              )}
+              <Header />
             </div>
             <div className="modal-body">{children}</div>
             <div className="modal-footer">
-              {footer ? (
-                footer()
-              ) : (
-                <button onClick={onCancel}>{cancelText || "Close"}</button>
-              )}
+              <Footer />
             </div>
           </div>
         </div>
