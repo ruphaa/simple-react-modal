@@ -30,7 +30,6 @@ const Simple = () => {
           visible={modalOpen}
           contentLabel="Happy Birthday 🎉"
           onCancel={toggleModal}
-          // classes="sideModal"
           Header={Header}
           Footer={Footer}
         >
