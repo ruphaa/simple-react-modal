@@ -11,7 +11,7 @@ const flexProps = css({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  flexDirection: "column"
+  flexDirection: "column",
 });
 
 const ModalOverlay = css({
@@ -20,7 +20,7 @@ const ModalOverlay = css({
   height: "100%",
   width: "100%",
   top: 0,
-  left: 0
+  left: 0,
 });
 
 const modalAnimation = keyframes`
@@ -66,6 +66,7 @@ const sideModal = css`
   top: 0;
   left: 0;
   animation: ${slideIn} 0.3s linear forwards;
+  background: #fff;
 `;
 
 const ModalHeader = css`
@@ -75,7 +76,6 @@ const ModalHeader = css`
   h1 {
     font-family: "Pacifico", cursive;
     font-size: 70px;
-    color: #fff;
     text-align: center;
   }
 
@@ -97,6 +97,10 @@ const fontSize = css`
   font-size: 1.5rem;
 `;
 
+const pd15 = css`
+  padding: 15px;
+`;
+
 const Modal = ({
   contentLabel,
   children,
@@ -105,7 +109,7 @@ const Modal = ({
   classes,
   cancelText,
   Header: CustomHeader,
-  Footer: CustomFooter
+  Footer: CustomFooter,
 }) => {
   const DefaultHeader = () => {
     return (
@@ -133,7 +137,7 @@ const Modal = ({
             <div className={ModalHeader}>
               <Header />
             </div>
-            <div className={fontSize}>{children}</div>
+            <div className={cx(fontSize, pd15)}>{children}</div>
             <div className={fontSize}>
               <Footer />
             </div>

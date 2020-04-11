@@ -99,6 +99,59 @@ html {
   right: 200px;
 }
 
+/* Banner Styles */
+
+.banner {
+  height: 35px;
+  color: #12344d;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 0 10px;
+}
+
+.banner .content {
+  flex: 1;
+}
+
+.banner.success {
+  border: 1px solid #b4e5da;
+  background-color: #e0f5f1;
+}
+
+.banner.info {
+  border: 1px solid #bbdcfe;
+  background-color: #e6f2fe;
+}
+
+.banner.warning {
+  border: 1px solid #fddbb5;
+  background-color: #fef1e1;
+}
+
+.banner.error {
+  border: 1px solid #ffd0d6;
+  background-color: #ffecf0;
+}
+
+.banner .close {
+  cursor: pointer;
+}
+
+.banner .close img {
+  height: 15px;
+  width: 15px;
+  margin-right: 10px;
+  vertical-align: bottom;
+}
+
+.icon img {
+  height: 15px;
+  width: 15px;
+  margin-right: 10px;
+  vertical-align: bottom;
+}
+
 @keyframes flyUp {
   0% {
     transform: translateY(90vh);
